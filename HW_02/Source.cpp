@@ -64,9 +64,18 @@ int main()
 				max = max - 1;
 			}
 
-			for (int i = min; i <= max; i=i+2)
+			//Solution 1
+			//for (int i = min; i <= max; i = i + 2) 
+			//{
+			//	sum = sum + i;
+			//}
+
+			//Solution 2
+			int i = min;
+			while (i <= max)
 			{
 				sum = sum + i ;
+				i = i + 2;
 			}
 
 			std::cout <<"Sum of odd numbers is: "<< sum;

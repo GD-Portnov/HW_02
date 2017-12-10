@@ -71,11 +71,10 @@ int main()
 			//}
 
 			//Solution 2
-			int i = min;
-			while (i <= max)
+			while (min <= max)
 			{
-				sum = sum + i ;
-				i = i + 2;
+				sum = sum + min;
+				min = min + 2;
 			}
 
 			std::cout <<"Sum of odd numbers is: "<< sum;

@@ -1,16 +1,22 @@
+//Updated source files available at GIT hub:
+//https://github.com/GD-Portnov/HW_02/blob/master/HW_02/Source.cpp
+
+
 #include <iostream>
 #include <math.h>
 
 
 int main()
+while ()
 {
-	int choice = 0;
-	std::cout << "HW_02. Enter number to choose task:\n1. Horizontal/Vertical line of symbols\n2. Sum of all odd numbers in specified range\n";
-	std::cout << "3. Calculate factorial of \"n\"\n4. Count number of digits in entered value\n5. Invert digits in entered number\n6. Sum of digits in entered number\n";
-	
-	std::cin >> choice;
-	switch (choice)
 	{
+		int choice = 0;
+		std::cout << "HW_02. Enter number to choose task:\n1. Horizontal/Vertical line of symbols\n2. Sum of all odd numbers in specified range\n";
+		std::cout << "3. Calculate factorial of \"n\"\n4. Count number of digits in entered value\n5. Invert digits in entered number\n6. Sum of digits in entered number\n";
+
+		std::cin >> choice;
+		switch (choice)
+		{
 		case 1:
 		{
 			int dirtn = 0; //1- hor., 2- vert.
@@ -34,7 +40,7 @@ int main()
 					}
 					else if (dirtn == 2)
 					{
-						std::cout << smbl <<"\n";
+						std::cout << smbl << "\n";
 					}
 				}
 			}
@@ -54,7 +60,7 @@ int main()
 			std::cin >> min;
 			std::cout << "Enter maximal number in range:\n";
 			std::cin >> max;
-		
+
 			if (min % 2 == 0)
 			{
 				min = min + 1;
@@ -77,10 +83,10 @@ int main()
 				min = min + 2;
 			}
 
-			std::cout <<"Sum of odd numbers is: "<< sum;
-			break;
-		}
+			std::cout << "Sum of odd numbers is: " << sum;
 
+		}
+		break;
 		case 3:
 		{
 			int n = 0;
@@ -88,55 +94,70 @@ int main()
 			std::cout << "Enter value you want to calculate:\n";
 			std::cin >> n;
 
-				if (n >= 0)
+			if (n >= 0)
+			{
+				for (int i = 1; i <= n; i++)
 				{
-					for (int i = 1; i <= n; i++)
-					{
-						fctr = fctr*i;
-					}
+					fctr = fctr * i;
 				}
-				else
-				{
-					std::cout << "You've entered wrong value!=(";
-				}
-				std::cout <<"Factorial of "<< n << " = "<< fctr;
+			}
+			else
+			{
+				std::cout << "You've entered wrong value!=(";
+			}
+			std::cout << "Factorial of " << n << " = " << fctr;
 		}
 		break;
 
 
 		case 4:
 		{
-			int val=0;
-			int inv_val=0;
-			int dig=0;
-			int counter=0;
-			std::cin >> val;
-
-			for (int i=1;dig!=0;i++)
+			int num = 0;
+			std::cout << "Please enter a random integer number to count number of digits:\n";
+			std::cin >> num;
+			if ((num >= -214748364) && (num <= 214748364))
 			{
-				dig = val /(std::pow(10,i));
-				continue;
-				inv_val = inv_val * 10 + dig;
-				counter = i;
-
-
+				for (int i = 1; num != 0; i++)
+				{
+					num /= 10;
+					if (num == 0)
+						std::cout << "Your number consist of " << i << " digits.\n";
+				}
 			}
-			std::cout << "dig" << dig;
+			else
+				std::cout << "You've entered damn wrong number...";
+		}
+		break;
 
-			std::cout << "val " << val;
+		case 5:
+		{
+			int num = 0;
+			int temp = 0;
+			int inv_num = 0;
+			std::cout << "Please enter a random integer number to get new inverted number:\n";
+			std::cin >> num;
+			if ((num >= -100000000) && (num <= 100000000))
+			{
+				temp = num;
+				int i;
+				for (i = 1; temp != 0; i++)
+				{
+					temp /= 10;
+					if (num == 0)
+						std::cout << "Your number consist of " << i << " digits.\n";
+				}
+			}
+			else
+				std::cout << "You've entered damn wrong number...";
+		}
 
-			std::cout << "inv_val " << inv_val;
 
 		}
 
 
+
+		std::cout << "\n";
+		system("pause");
+		return 0;
 	}
-		
-			
-	
-	std::cout << "\n";
-
-
-
-	system("pause");
 }

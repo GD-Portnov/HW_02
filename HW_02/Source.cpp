@@ -126,18 +126,54 @@ int main()
 			std::cout << "val " << val;
 
 			std::cout << "inv_val " << inv_val;
-
 		}
+		break;
 
+		case 5:
+		{
+			int val = 0;
+			int inv = 0;
+			std::cin >> val;
+			while (val > 0)
+			{
+				inv =inv*10 + val % 10;
+				val /= 10;
+				if (val == 0)
+				break;
+			}
+			std::cout << inv;
+		}
+		break;
+
+		case 6:
+		{
+			int val = 0;
+			int sum = 0;
+			std::cin >> val;
+			for (; val > 0;)
+			{
+				sum = sum + val % 10;
+				val /= 10;
+				if (val == 0)
+					break;
+			}
+			std::cout << sum;
+		}
+		break;
 
 	}
-		
+	
+
+	
+	
+
+
 			
 	
 	std::cout << "\n";
 
+		
 
-
-	//system("pause");
+	system("pause");
 	return 0;
 }

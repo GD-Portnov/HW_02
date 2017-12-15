@@ -6,7 +6,7 @@ int main()
 {
 	int choice = 0;
 	std::cout << "HW_02. Enter number to choose task:\n1. Horizontal/Vertical line of symbols\n2. Sum of all odd numbers in specified range\n";
-	std::cout << "3. Calculate factorial of \"n\"\n4. Count number of digits in entered value\n5. Invert digits in entered number\n6. Sum of digits in entered number\n";
+	std::cout << "3. Calculate factorial of \"n\"\n4. Count number of digits in entered number\n5. Invert digits in entered number\n6. Sum of digits in entered number\n";
 	
 	
 	while (true)
@@ -113,7 +113,7 @@ int main()
 			if ((val > -100000000) && (val < 100000000))
 			{
 				int i;
-				for (i = 1; val > 0; ++i)
+				for (i = 0; val > 0; i++)
 				{
 					val /= 10;
 				}

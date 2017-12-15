@@ -144,8 +144,19 @@ int main()
 					for (i = 1; temp != 0; i++)
 					{
 						temp /= 10;
-						if (num == 0)
-							std::cout << "Your number consist of " << i << " digits.\n";
+						//if (temp == 0)
+						//std::cout << "Your number consist of " << i << " digits.\n";
+					}
+
+					for (;i>=0;)
+					{
+						i = i - 1;
+
+
+
+
+						if (i == 0)
+							std::cout << "Your inverted number " << inv_num << ".\n";
 					}
 				}
 				else

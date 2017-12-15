@@ -116,10 +116,15 @@ int main()
 			if ((val > -100000000) && (val < 100000000))
 			{
 				int i;
-				for (i = 0; val > 0; i++)
+				if (val != 0)
 				{
-					val /= 10;
+					for (i = 0; val > 0; i++)
+					{
+						val /= 10;
+					}
 				}
+				else
+					i = 1;
 				std::cout << "Number of digits in Entered value = " << i;
 			}
 			else

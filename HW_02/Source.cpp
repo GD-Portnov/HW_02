@@ -1,3 +1,6 @@
+//Actual source file on Git Hub:
+//https://github.com/GD-Portnov/HW_02/blob/master/HW_02/Source.cpp
+
 #include <iostream>
 #include <math.h>
 

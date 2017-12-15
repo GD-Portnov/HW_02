@@ -8,9 +8,12 @@ int main()
 	std::cout << "HW_02. Enter number to choose task:\n1. Horizontal/Vertical line of symbols\n2. Sum of all odd numbers in specified range\n";
 	std::cout << "3. Calculate factorial of \"n\"\n4. Count number of digits in entered value\n5. Invert digits in entered number\n6. Sum of digits in entered number\n";
 	
-	std::cin >> choice;
-	switch (choice)
+	
+	while (true)
 	{
+		std::cin >> choice;
+		switch (choice)
+		{
 		case 1:
 		{
 			int dirtn = 0; //1- hor., 2- vert.
@@ -34,7 +37,7 @@ int main()
 					}
 					else if (dirtn == 2)
 					{
-						std::cout << smbl <<"\n";
+						std::cout << smbl << "\n";
 					}
 				}
 			}
@@ -42,8 +45,8 @@ int main()
 			{
 				std::cout << "Wrong direction!";
 			}
-			break;
 		}
+		break;
 
 		case 2:
 		{
@@ -54,7 +57,7 @@ int main()
 			std::cin >> min;
 			std::cout << "Enter maximal number in range:\n";
 			std::cin >> max;
-		
+
 			if (min % 2 == 0)
 			{
 				min = min + 1;
@@ -77,7 +80,7 @@ int main()
 				min = min + 2;
 			}
 
-			std::cout <<"Sum of odd numbers is: "<< sum;
+			std::cout << "Sum of odd numbers is: " << sum;
 			break;
 		}
 
@@ -85,47 +88,40 @@ int main()
 		{
 			int n = 0;
 			int fctr = 1;
-			std::cout << "Enter value you want to calculate:\n";
+			std::cout << "Enter random integer value you want to calculate:\n";
 			std::cin >> n;
 
-				if (n >= 0)
+			if (n >= 0)
+			{
+				for (int i = 1; i <= n; i++)
 				{
-					for (int i = 1; i <= n; i++)
-					{
-						fctr = fctr*i;
-					}
+					fctr = fctr * i;
 				}
-				else
-				{
-					std::cout << "You've entered wrong value!=(";
-				}
-				std::cout <<"Factorial of "<< n << " = "<< fctr;
+			}
+			else
+			{
+				std::cout << "You've entered wrong value!=(";
+			}
+			std::cout << "Factorial of " << n << " = " << fctr;
 		}
 		break;
 
-
 		case 4:
 		{
-			int val=0;
-			int inv_val=0;
-			int dig=0;
-			int counter=0;
+			int val = 0;
+			std::cout << "Enter random integer number, which digits you want to count:\n";
 			std::cin >> val;
-
-			for (int i=1;dig!=0;i++)
+			if ((val > -100000000) && (val < 100000000))
 			{
-				dig = val /(std::pow(10,i));
-				continue;
-				inv_val = inv_val * 10 + dig;
-				counter = i;
-
-
+				int i;
+				for (i = 1; val > 0; ++i)
+				{
+					val /= 10;
+				}
+				std::cout << "Number of digits in Entered value = " << i;
 			}
-			std::cout << "dig" << dig;
-
-			std::cout << "val " << val;
-
-			std::cout << "inv_val " << inv_val;
+			else
+				std::cout << "You've entered wrong value!=(";
 		}
 		break;
 
@@ -133,15 +129,21 @@ int main()
 		{
 			int val = 0;
 			int inv = 0;
+			std::cout << "Enter random integer number, which digits you want to invert:\n";
 			std::cin >> val;
-			while (val > 0)
+			if ((val > -100000000) && (val < 100000000))
 			{
-				inv =inv*10 + val % 10;
-				val /= 10;
-				if (val == 0)
-				break;
+				while (val > 0)
+				{
+					inv = inv * 10 + val % 10;
+					val /= 10;
+					if (val == 0)
+						break;
+				}
+				std::cout << "Your inverted number = " << inv;
 			}
-			std::cout << inv;
+			else
+				std::cout << "You've entered wrong value!=(";
 		}
 		break;
 
@@ -149,31 +151,27 @@ int main()
 		{
 			int val = 0;
 			int sum = 0;
+			std::cout << "Enter random integer number, which digits you want to sum:\n";
 			std::cin >> val;
-			for (; val > 0;)
+			if ((val > -100000000) && (val < 100000000))
 			{
-				sum = sum + val % 10;
-				val /= 10;
-				if (val == 0)
-					break;
+				for (; val > 0;)
+				{
+					sum = sum + val % 10;
+					val /= 10;
+					if (val == 0)
+						break;
+				}
+				std::cout << "Sum of digits in your number = " << sum;
 			}
-			std::cout << sum;
+			else
+				std::cout << "You've entered wrong value!=(";
 		}
 		break;
 
+		}
 	}
-	
-
-	
-	
-
-
-			
-	
 	std::cout << "\n";
-
-		
-
 	system("pause");
 	return 0;
 }

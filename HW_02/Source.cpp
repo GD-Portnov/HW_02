@@ -23,8 +23,7 @@ int main()
 			std::cin >> dirtn;
 			std::cout << "Enter symbol you wish to apply:\n";
 			std::cin >> smbl;
-			std::cout << smbl;
-
+			
 			if ((dirtn > 0) && (dirtn < 3))
 			{
 				std::cout << "Enter lenght:\n";
